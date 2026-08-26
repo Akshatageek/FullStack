@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Classic Dashboard</title>
+	<style>
+		* { box-sizing: border-box; margin: 0; }
+		body { font-family: Arial, sans-serif; background: #f3f5f7; }
+
+		.dashboard {
+			min-height: 100vh;
+			display: grid;
+			gap: 12px;
+			padding: 12px;
+			grid-template-columns: 220px 1fr;
+			grid-template-rows: 70px 1fr 60px;
+			grid-template-areas:
+				"header header"
+				"sidebar main"
+				"footer footer";
+		}
+
+		.box { background: #fff; border-radius: 8px; padding: 14px; }
+		.header { grid-area: header; background: #1f2937; color: #fff; }
+		.sidebar { grid-area: sidebar; background: #e5e7eb; }
+		.main { grid-area: main; }
+		.footer { grid-area: footer; background: #111827; color: #fff; }
+
+		.cards {
+			display: grid;
+			gap: 12px;
+			grid-template-columns: repeat(4, 1fr);
+			margin-top: 12px;
+		}
+
+		.card {
+			background: #dbeafe;
+			border-radius: 8px;
+			padding: 16px;
+			min-height: 100px;
+		}
+
+		@media (max-width: 850px) {
+			.dashboard {
+				grid-template-columns: 1fr;
+				grid-template-rows: 70px auto 1fr 60px;
+				grid-template-areas:
+					"header"
+					"sidebar"
+					"main"
+					"footer";
+			}
+			.cards { grid-template-columns: repeat(2, 1fr); }
+		}
+	</style>
+</head>
+<body>
+	<div class="dashboard">
+		<header class="box header">Header</header>
+
+		<aside class="box sidebar">
+			<h3>Sidebar</h3>
+			<p>Menu 1</p>
+			<p>Menu 2</p>
+			<p>Menu 3</p>
+		</aside>
+
+		<main class="box main">
+			<h2>Main Content</h2>
+			<div class="cards">
+				<div class="card">Card 1</div>
+				<div class="card">Card 2</div>
+				<div class="card">Card 3</div>
+				<div class="card">Card 4</div>
+			</div>
+		</main>
+
+		<footer class="box footer">Footer</footer>
+	</div>
+</body>
+</html>

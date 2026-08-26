@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Basic Photo Gallery</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		body {
+			margin: 0;
+			font-family: Arial, sans-serif;
+			background: #f4f4f4;
+			padding: 24px;
+		}
+		.gallery-wrapper {
+			width: 100%;
+			max-width: 794px;
+			margin: 0 auto;
+			background: #ffffff;
+			padding: 16px;
+			border: 1px solid #dcdcdc;
+		}
+
+		.gallery {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 12px;
+		}
+
+		.item {
+			aspect-ratio: 1 / 1;
+			overflow: hidden;
+			border-radius: 6px;
+			background: pink;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 36px;
+			font-weight: 700;
+			color: #333333;
+		}
+
+		@media (max-width: 900px) {
+			.gallery {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+
+		@media (max-width: 640px) {
+			.gallery {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
+		@media (max-width: 420px) {
+			.gallery {
+				grid-template-columns: 1fr;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="gallery-wrapper">
+		<div class="gallery">
+			<div class="item">1</div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+			<div class="item">4</div>
+			<div class="item">5</div>
+			<div class="item">6</div>
+			<div class="item">7</div>
+			<div class="item">8</div>
+			<div class="item">9</div>
+			<div class="item">10</div>
+			<div class="item">11</div>
+			<div class="item">12</div>
+			<div class="item">13</div>
+			<div class="item">14</div>
+			<div class="item">15</div>
+			<div class="item">16</div>
+
+		</div>
+	</div>
+</body>
+</html>
