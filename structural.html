@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustache with Pseudo-elements</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            background: #f6e8d5;
+        }
+
+        .face {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            border: 6px solid #2d211d;
+            border-radius: 50%;
+            background: #f4b183;
+            box-shadow: 0 12px 0 #d88a61;
+        }
+
+        .eye {
+            position: absolute;
+            top: 78px;
+            width: 24px;
+            height: 32px;
+            border-radius: 50%;
+            background: #2d211d;
+        }
+
+        .eye:first-child {
+            left: 70px;
+        }
+
+        .eye:nth-child(2) {
+            right: 70px;
+        }
+
+        .nose {
+            position: absolute;
+            top: 115px;
+            left: 50%;
+            width: 30px;
+            height: 38px;
+            border-radius: 45% 45% 55% 55%;
+            background: #d77a59;
+            transform: translateX(-50%);
+        }
+
+        .mustache {
+            position: absolute;
+            top: 153px;
+            left: 50%;
+            width: 125px;
+            height: 48px;
+            transform: translateX(-50%);
+        }
+
+        .mustache::before,
+        .mustache::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 70px;
+            height: 38px;
+            background: #2d211d;
+            border-radius: 100% 0 100% 20%;
+        }
+
+        .mustache::before {
+            right: 50%;
+            transform: rotate(12deg);
+            transform-origin: right bottom;
+        }
+
+        .mustache::after {
+            left: 50%;
+            transform: scaleX(-1) rotate(12deg);
+            transform-origin: left bottom;
+        }
+
+        .face:hover .mustache::before,
+        .face:hover .mustache::after {
+            background: #17110f;
+            transform: scale(1.08) rotate(12deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="face">
+        <span class="eye"></span>
+        <span class="eye"></span>
+        <span class="nose"></span>
+        <span class="mustache"></span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Layout</title>
+    <style>
+        * { 
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+		body { 
+            font-family: Arial,sans-serif;
+            background: #f3f5f7;
+        }
+
+        .dashboard {
+			min-height: 100vh;
+			display: grid;
+			gap: 12px;
+			padding: 12px;
+			grid-template-columns: 220px 1fr;
+			grid-template-rows: 70px 1fr 60px;
+			grid-template-areas:
+				"header header"
+				"sidebar main"
+				"footer footer";
+		}
+
+        .box { 
+            background: #fff;
+            border-radius: 8px; 
+            padding: 14px;
+        }
+
+		.header {
+            grid-area: header;
+            background: lightgray;
+            color: #fff;
+        }
+
+		.sidebar {
+            grid-area: sidebar;
+            background: green;
+        }
+
+		.main {
+            grid-area: main;
+        }
+
+		.footer {
+            grid-area: footer;
+            background: blue;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <header class="box header">Header</header>
+        <aside class="box sidebar">Sidebar</aside>
+        <main class="box main">Main Content</main>
+        <footer class="box footer">Footer</footer>
+    </div>
+
+    
+</body>
+</html>

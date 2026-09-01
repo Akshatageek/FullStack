@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Variables</title>
+</head>
+<style>
+    :root{
+        --primary-color:black;
+        --secondary-color:yellow;
+        --font-size:20px;
+
+    }
+    div{
+        --primary-color:red;
+        --secondary-color:black;
+    }
+    p{
+        background-color:var(--primary-color);
+        color:var(--secondary-color1,white);
+        font-size:calc(var(--font-size)*3);
+
+    }
+</style>
+<body>
+    <div>
+    <p>Hello World!</p></div>
+    <p>helloooooo</p>
+</body>
+</html>
